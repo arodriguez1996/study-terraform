@@ -31,3 +31,5 @@ terraform.rc
 
 # MacOS system files
 .DS_Store
+
+*.txt
