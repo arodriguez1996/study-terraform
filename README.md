@@ -36,6 +36,14 @@ This command doesn't execute anything; it just displays the process guide in the
 
 Saves the output of the plan. Its usefil to ensure that we successfully deploy a plan. This can apply with `terraform apply "[name].plan"`
 
+`--var [name]=[value]`
+
+Set directly a variable value in plan command
+
+`--var-file`
+
+Use tfvars file called by file name
+
 ### `terraform apply`
 
 This command generates a `plan` and executes it if the user accepts it. All resources are generated or destroyed
@@ -55,3 +63,18 @@ Validate the sintax of all terraform files
 ### `terraform fmt`
 
 Fix all non-indented code, such a lint
+
+## Variables
+
+### tfvars
+
+Set the variable values as an env file, the names should be called `terraform.tfvars` or `terraform.tfvars.json`, we can also use `*.auto.tfvars` or `*.auto.tfvars.json` to have multiple files per provider, resource type, or whatever we want
+
+#### Priority of variables setting
+
+| Order | Definition                            |
+|-------|---------------------------------------|
+| 1     | Env variable (export TF_VAR_foo="foo")|
+| 2     | terraform.tfvars                      |
+| 3     | *.auto.tfvars (in alphabetical order) |
+| 4     | -var or --var-file (coomand line)     |
