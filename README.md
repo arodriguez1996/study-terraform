@@ -96,3 +96,21 @@ Set the variable values as an env file, the names should be called `terraform.tf
 ### conversion of variables
 
 Only: string <-> number and string <-> bool
+
+## output
+
+show values after apply
+
+### syntax
+
+```tf
+    output "public_ip" {
+        value = aws_instance.linux.public_ip
+        description = "show linux public ip"
+    }
+
+```
+
+### `terrafom output [ouput-name]`
+
+Show all terraform outputs. We can also use `terraform output "public_ip"` for show only a output
