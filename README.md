@@ -78,3 +78,21 @@ Set the variable values as an env file, the names should be called `terraform.tf
 | 2     | terraform.tfvars                      |
 | 3     | *.auto.tfvars (in alphabetical order) |
 | 4     | -var or --var-file (coomand line)     |
+
+### Types
+
+| type   | example                                      |
+|--------|----------------------------------------------|
+| string | "10.10.0.0/16"                               |
+| number | 1                                            |
+| bool   | false                                        |
+| any    | all (not recomended to use)                  |
+| list(type)    | for list(string) ["1", "1", "2", "3"], use -> var.my_list[1] |
+| map(type)    | { "name" : "foo" }, use -> var.my_map["name"]|
+| set(type)    | ["1", "2"], this doesn't allow repeated elements and cannot access a specific position|
+| object({$scheme})    | object({ name = string }), use -> var.my_object.name|
+| tuple([string, string, number, bool]) | ["hello", "world", 1, false] |
+
+### conversion of variables
+
+Only: string <-> number and string <-> bool
