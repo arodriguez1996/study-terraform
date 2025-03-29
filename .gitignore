@@ -19,9 +19,9 @@ override.tf.json
 .terraform.rc
 terraform.rc
 
-# Sensitive variable files
-*.tfvars
-*.tfvars.json
+# Sensitive variable files. I push this info for study purposes,
+# *.tfvars
+# *.tfvars.json
 
 # IDE/editor specific files
 .vscode/
