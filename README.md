@@ -64,6 +64,14 @@ Validate the sintax of all terraform files
 
 Fix all non-indented code, such a lint
 
+## Resources
+
+Terraform resource to deploy, resource parameters may change depending on for resource type
+
+## Provider
+
+Some configurations per provider, such as the region for AWS. We can also use `alias` to use multiple configurations per provider resource.
+
 ## Variables
 
 ### tfvars
@@ -97,7 +105,7 @@ Set the variable values as an env file, the names should be called `terraform.tf
 
 Only: string <-> number and string <-> bool
 
-## output
+## Output
 
 show values after apply
 
